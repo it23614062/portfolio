@@ -40,6 +40,8 @@ export default function Hero() {
           {text}<span className="animate-blink text-accent font-bold">|</span>
         </div>
 
+        <div className="w-12 h-px bg-accent/40 mt-8 mb-8" />
+
         <div className="flex flex-wrap gap-4 mt-10 animate-fadeUp" style={{ animationDelay: '500ms' }}>
           <a 
             href="#projects" 
@@ -53,19 +55,31 @@ export default function Hero() {
           >
             Get In Touch
           </a>
+          <a
+            href="/Theertha_Dheemani_CV.pdf"
+            download="Theertha_Dheemani_CV.pdf"
+            className="inline-flex items-center gap-2 border border-border text-dim px-7 py-3 rounded-full hover:border-accent hover:text-accent transition-all duration-200 font-medium"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download CV
+          </a>
         </div>
 
         <div className="mt-20 pt-8 border-t border-border grid grid-cols-2 md:grid-cols-3 gap-8 animate-fadeUp" style={{ animationDelay: '600ms' }}>
           <div>
-            <div className="text-3xl font-semibold gradient-text">3+</div>
+            <div className="text-3xl font-semibold shimmer-text">3+</div>
             <div className="text-dim text-sm mt-1">Projects</div>
           </div>
           <div>
-            <div className="text-3xl font-semibold gradient-text">2+</div>
+            <div className="text-3xl font-semibold shimmer-text">2+</div>
             <div className="text-dim text-sm mt-1">Years learning</div>
           </div>
           <div>
-            <div className="text-3xl font-semibold gradient-text">4</div>
+            <div className="text-3xl font-semibold shimmer-text">4</div>
             <div className="text-dim text-sm mt-1">Certifications</div>
           </div>
         </div>

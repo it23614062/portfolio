@@ -71,7 +71,7 @@ export default function Navbar() {
             </nav>
             <a 
               href="#contact"
-              className="bg-accent/10 border border-accent/30 text-accent text-sm px-4 py-2 rounded-full hover:bg-accent hover:text-bg transition-all duration-200"
+              className="bg-accent/10 border border-accent/30 text-accent text-sm px-4 py-2 rounded-full hover:bg-accent hover:text-bg transition-all duration-200 animate-glow"
             >
               Hire Me
             </a>
@@ -86,6 +86,8 @@ export default function Navbar() {
             <span className={`h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`} />
             <span className={`h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-[5.5px]' : 'translate-y-1'}`} />
           </button>
+          
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
         </div>
       </header>
 
@@ -110,7 +112,7 @@ export default function Navbar() {
           ))}
           <a 
             href="#contact"
-            className="mt-4 bg-accent/10 border border-accent/30 text-accent font-medium text-center px-4 py-3 rounded-full hover:bg-accent hover:text-bg transition-all duration-200"
+            className="mt-4 bg-accent/10 border border-accent/30 text-accent font-medium text-center px-4 py-3 rounded-full hover:bg-accent hover:text-bg transition-all duration-200 animate-glow"
             onClick={() => setIsOpen(false)}
           >
             Hire Me

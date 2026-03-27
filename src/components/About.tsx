@@ -38,13 +38,16 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="section relative" ref={sectionRef}>
+    <section id="about" className="section relative overflow-hidden" ref={sectionRef}>
+      <div className="absolute -top-4 -left-4 font-semibold text-[8rem] text-white/[0.02] select-none pointer-events-none leading-none">
+        ABOUT
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left column */}
         <div className="reveal">
           <div className="text-accent font-mono text-xs uppercase tracking-widest mb-3">About Me</div>
           <h2 className="text-3xl md:text-4xl font-semibold text-light mb-6">CS Undergrad passionate about quality & backend systems</h2>
-          
+
           <div className="text-dim leading-relaxed space-y-4 mb-10">
             <p>
               I am a Computer Science undergraduate at SLIIT with a strong focus on backend development and quality assurance engineering.
@@ -72,7 +75,7 @@ export default function About() {
         {/* Right column */}
         <div className="reveal reveal-delay-2">
           <div className="text-accent font-mono text-xs uppercase tracking-widest mb-6">Education</div>
-          
+
           <div className="flex flex-col">
             {education.map((item, index) => (
               <div key={index} className="border-l-2 border-border pl-5 mb-8 relative last:mb-0">

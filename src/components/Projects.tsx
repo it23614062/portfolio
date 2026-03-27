@@ -76,15 +76,20 @@ export default function Projects() {
         {projects.map((project, i) => (
           <div 
             key={project.id} 
-            className={`reveal reveal-delay-${(i % 3) + 1} bg-surface border border-border rounded-2xl p-6 flex flex-col group hover:border-accent/50 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(124,107,255,0.12)] transition-all duration-300 cursor-none`}
+            className={`reveal reveal-delay-${(i % 3) + 1} bg-surface border border-border rounded-2xl p-6 flex flex-col group hover:border-accent/50 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(124,107,255,0.12)] transition-all duration-300 cursor-none relative overflow-hidden before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-accent/50 before:to-transparent before:opacity-0 group-hover:before:opacity-100 before:transition-opacity before:rounded-t-2xl`}
           >
             <div className="flex justify-between items-center mb-4">
               <span className="bg-accent/10 text-accent text-xs font-mono px-3 py-1 rounded-full">
                 {project.tag}
               </span>
-              <span className="text-muted text-xs font-mono">
-                {project.period}
-              </span>
+              <div className="flex items-center gap-3">
+                <span className="text-muted text-xs font-mono">
+                  {project.period}
+                </span>
+                <span className="font-mono text-xs text-muted">
+                  #{String(i + 1).padStart(2, '0')}
+                </span>
+              </div>
             </div>
             
             <h3 className="text-xl font-semibold text-light mt-4 mb-2 group-hover:text-accentGlow transition-colors">
