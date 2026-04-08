@@ -1,32 +1,33 @@
 export interface Project {
-  id: number;
-  name: string;
-  period: string;
-  description: string;
-  bullets: string[];
-  tech: string[];
-  tag: string;
+  id: number
+  name: string
+  period: string
+  description: string
+  bullets: string[]
+  tech: string[]
+  tag: string
 }
 
 export interface SkillGroup {
-  category: string;
-  icon: string;
-  skills: string[];
+  category: string
+  icon: string
+  skills: string[]
 }
 
 export interface Certification {
-  title: string;
-  issuer: string;
-  inProgress: boolean;
+  title: string
+  issuer: string
+  status: 'completed' | 'inProgress'
+  file?: string
 }
 
 export interface NavLink {
-  label: string;
-  href: string;
+  label: string
+  href: string
 }
 
 export interface Education {
-  institution: string;
-  degree: string;
-  period: string;
+  institution: string
+  degree: string
+  period: string
 }

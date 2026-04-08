@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react'
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [activeSection, setActiveSection] = useState<string>('');
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   const navLinks = [
     { label: 'About', href: '#about' },
@@ -11,52 +11,54 @@ export default function Navbar() {
     { label: 'Projects', href: '#projects' },
     { label: 'Certifications', href: '#certifications' },
     { label: 'Contact', href: '#contact' },
-  ];
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 60);
-    };
+      setIsScrolled(window.scrollY > 60)
+    }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+            setActiveSection(entry.target.id)
           }
-        });
+        })
       },
-      { threshold: 0.5 }
-    );
+      { threshold: 0.5 },
+    )
 
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach((section) => observer.observe(section));
+    const sections = document.querySelectorAll('section[id]')
+    sections.forEach((section) => observer.observe(section))
 
     return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
-  }, []);
+      sections.forEach((section) => observer.unobserve(section))
+    }
+  }, [])
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-bg/80 backdrop-blur-xl border-b border-border py-4' : 'bg-transparent py-6'
+        className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
+          isScrolled ? 'border-b border-border bg-bg/85 py-3 backdrop-blur-xl' : 'bg-transparent py-4'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-          <div className="w-9 h-9 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center font-mono text-accent text-sm relative z-50 cursor-pointer">
-            <a href="#">TD</a>
-          </div>
+        <div className="mx-auto flex w-full max-w-[1120px] items-center justify-between px-5 sm:px-6 lg:px-8">
+          <a
+            href="#hero"
+            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-full border border-accent/30 bg-accent/10 font-mono text-sm text-accent transition-colors hover:border-accent hover:bg-accent/15"
+          >
+            TD
+          </a>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            <nav className="flex gap-6">
+          <div className="hidden items-center gap-6 md:flex lg:gap-8">
+            <nav className="flex gap-5 lg:gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
@@ -69,35 +71,34 @@ export default function Navbar() {
                 </a>
               ))}
             </nav>
-            <a 
+            <a
               href="#contact"
-              className="bg-accent/10 border border-accent/30 text-accent text-sm px-4 py-2 rounded-full hover:bg-accent hover:text-bg transition-all duration-200 animate-glow"
+              className="rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm text-accent transition-all duration-200 hover:bg-accent hover:text-bg"
             >
               Hire Me
             </a>
           </div>
 
-          {/* Mobile Toggle */}
           <button
-            className="md:hidden z-50 relative text-light focus:outline-none w-6 h-6 flex flex-col justify-center items-center"
+            className="relative z-50 flex h-6 w-6 flex-col items-center justify-center text-light focus:outline-none md:hidden"
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
             onClick={() => setIsOpen(!isOpen)}
           >
-            <span className={`h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-[5px]' : '-translate-y-1'}`} />
+            <span className={`h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? 'translate-y-[5px] rotate-45' : '-translate-y-1'}`} />
             <span className={`h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`} />
-            <span className={`h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-[5.5px]' : 'translate-y-1'}`} />
+            <span className={`h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? '-translate-y-[5.5px] -rotate-45' : 'translate-y-1'}`} />
           </button>
-          
+
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
         </div>
       </header>
 
-      {/* Mobile Menu */}
       <div
-        className={`fixed inset-x-0 top-0 z-40 bg-surface border-b border-border transition-transform duration-500 ease-in-out md:hidden ${
+        className={`fixed inset-x-0 top-0 z-40 border-b border-border bg-surface transition-transform duration-500 ease-in-out md:hidden ${
           isOpen ? 'translate-y-0 shadow-2xl' : '-translate-y-full'
         }`}
       >
-        <div className="pt-24 pb-6 px-6 flex flex-col gap-4">
+        <div className="flex flex-col gap-4 px-6 pb-6 pt-24">
           {navLinks.map((link) => (
             <a
               key={link.label}
@@ -110,9 +111,9 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a 
+          <a
             href="#contact"
-            className="mt-4 bg-accent/10 border border-accent/30 text-accent font-medium text-center px-4 py-3 rounded-full hover:bg-accent hover:text-bg transition-all duration-200 animate-glow"
+            className="mt-4 rounded-full border border-accent/30 bg-accent/10 px-4 py-3 text-center font-medium text-accent transition-all duration-200 hover:bg-accent hover:text-bg"
             onClick={() => setIsOpen(false)}
           >
             Hire Me
@@ -120,5 +121,5 @@ export default function Navbar() {
         </div>
       </div>
     </>
-  );
+  )
 }
