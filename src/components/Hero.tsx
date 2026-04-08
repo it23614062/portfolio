@@ -25,30 +25,49 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 w-full">
-        <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 text-accent text-xs font-mono mb-8 animate-fadeIn">
+        <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 text-accent text-xs font-mono mb-8 md:mb-12 animate-fadeIn">
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse block"></span>
           Available for internship opportunities
         </div>
 
-        <div className="text-dim text-2xl font-light animate-fadeUp">Hi, I&apos;m</div>
-        <h1 className="display-text-safe mt-2 text-5xl md:text-7xl font-semibold text-light animate-fadeUp" style={{ animationDelay: '120ms' }}>
-          Theertha 
-        </h1>
-        <h1 className="display-text-safe mt-2 text-5xl md:text-7xl font-semibold text-light animate-fadeUp" style={{ animationDelay: '120ms' }}>
-          Dheemani
-        </h1>
-        <h1 className="display-text-safe mt-2 text-5xl md:text-7xl font-semibold gradient-text animate-fadeUp" style={{ animationDelay: '240ms' }}>
-          Wijethunga
-        </h1>
+        <div className="flex flex-col md:flex-row items-center md:items-center gap-8 md:gap-16">
+          <div className="w-full md:w-5/12 flex justify-center md:justify-start animate-fadeUp">
+            <div 
+              className="relative w-72 md:w-full max-w-sm aspect-square md:aspect-[4/5] mx-auto md:mx-0 overflow-hidden group mix-blend-lighten"
+              style={{
+                maskImage: 'radial-gradient(ellipse 90% 90% at 50% 50%, black 60%, transparent 100%)',
+                WebkitMaskImage: 'radial-gradient(ellipse 90% 90% at 50% 50%, black 60%, transparent 100%)'
+              }}
+            >
+              <img 
+                src="/my_photo.jpg" 
+                alt="Theertha Dheemani Wijethunga" 
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+              />
+              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-bg to-transparent pointer-events-none"></div>
+            </div>
+          </div>
+          
+          <div className="w-full md:w-7/12 flex flex-col justify-center text-center md:text-left">
+            <div className="text-dim text-2xl font-light animate-fadeUp" style={{ animationDelay: '100ms' }}>Hi, I&apos;m</div>
+            <h1 className="display-text-safe mt-2 text-5xl md:text-7xl font-semibold text-light animate-fadeUp" style={{ animationDelay: '120ms' }}>
+              Theertha 
+            </h1>
+            <h1 className="display-text-safe mt-2 text-5xl md:text-7xl font-semibold text-light animate-fadeUp" style={{ animationDelay: '120ms' }}>
+              Dheemani
+            </h1>
+            <h1 className="display-text-safe mt-2 text-5xl md:text-7xl font-semibold gradient-text animate-fadeUp" style={{ animationDelay: '240ms' }}>
+              Wijethunga
+            </h1>
 
-        <div className="font-mono text-dim text-sm md:text-base mt-6 animate-fadeUp min-h-[24px]" style={{ animationDelay: '400ms' }}>
-          {text}
-          <span className="animate-blink text-accent font-bold">|</span>
+            <div className="font-mono text-dim text-sm md:text-base mt-6 animate-fadeUp min-h-[48px] max-w-xl mx-auto md:mx-0" style={{ animationDelay: '400ms' }}>
+              {text}
+              <span className="animate-blink text-accent font-bold">|</span>
+            </div>
+          </div>
         </div>
 
-        <div className="w-12 h-px bg-accent/40 mt-8 mb-8" />
-
-        <div className="flex flex-wrap gap-4 mt-10 animate-fadeUp" style={{ animationDelay: '500ms' }}>
+        <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-8 md:mt-12 animate-fadeUp" style={{ animationDelay: '500ms' }}>
           <a
             href="#projects"
             className="bg-accent text-bg font-medium px-7 py-3 rounded-full hover:bg-accentGlow transition-all duration-200 hover:shadow-[0_0_30px_rgba(124,107,255,0.4)]"
