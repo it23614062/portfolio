@@ -29,7 +29,7 @@ export default function Contact() {
         <h2 className="mb-4 text-4xl font-semibold text-light md:text-5xl">Let&apos;s build something great</h2>
 
         <p className="mt-4 leading-relaxed text-dim">
-          I&apos;m actively looking for QA or backend internship opportunities. If you have a role or just want to connect, my inbox is always open.
+          I&apos;m currently seeking a QA Internship opportunity to apply and grow my skills in software testing and quality assurance. If you have an opening or would like to connect, feel free to reach out — my inbox is always open.
         </p>
 
         <a
