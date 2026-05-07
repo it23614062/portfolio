@@ -75,6 +75,33 @@ export default function Projects() {
         'MySQL',
       ],
     },
+    {
+      id: 4,
+      name: 'RestroPlate',
+      period: 'Jan-Apr 2026',
+      tag: 'Full Stack',
+      description:
+        'A food donation and distribution management web application that connects donors, distribution centers, and consumers to reduce food waste and improve food accessibility.',
+      bullets: [
+        'Built responsive frontend modules for donation listings, donation requests, inventory management, and public food availability',
+        'Integrated a React and TypeScript frontend with an ASP.NET Core Web API using REST APIs, JWT authentication, and role-based access control',
+        'Supported testing and delivery workflows with Selenium WebDriver, Pytest, Postman, Swagger, GitHub, and Azure-based deployment concepts',
+      ],
+      tech: [
+        'React',
+        'Vite',
+        'TypeScript',
+        'Tailwind CSS',
+        'ASP.NET Core Web API',
+        'C#',
+        'SQL Server',
+        'JWT',
+        'Selenium',
+        'Pytest',
+        'Postman',
+        'Azure',
+      ],
+    },
   ]
 
   return (

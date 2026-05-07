@@ -27,12 +27,12 @@ export default function Skills() {
     {
       category: 'Languages',
       icon: '01',
-      skills: ['Java', 'Python', 'C'],
+      skills: ['Java', 'Python', 'C', 'C#'],
     },
     {
       category: 'Testing',
       icon: '02',
-      skills: ['Postman', 'Swagger', 'Selenium (Java)', 'Selenium (Python)', 'Manual Testing'],
+      skills: ['Postman', 'Swagger', 'Selenium (Java)', 'Selenium (Python)', 'Manual Testing', 'Playwright (learning)'],
     },
     {
       category: 'Backend',
@@ -42,7 +42,7 @@ export default function Skills() {
     {
       category: 'Frontend',
       icon: '04',
-      skills: ['React.js', 'TypeScript', 'JavaScript', 'Vite'],
+      skills: ['React.js', 'TypeScript', 'JavaScript', 'Vite', 'HTML', 'CSS', 'Tailwind CSS'],
     },
     {
       category: 'Database',
